@@ -29,7 +29,7 @@ end
 student = Student.new "Cristina"
 student.greeting
 student.learn
-student.inspect
+
 
 instructor = Instructor.new "Chris"
 instructor.greeting 
