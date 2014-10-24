@@ -16,18 +16,17 @@ class Rove
 		elsif @direction == "W"
 			puts "now it is(#{@x},#{@y},West)"
 		end	
-	end	
+	end 
 
-	def read_instruction(direction)
-		if direction == "M"
+	def read_instruction(instruction)
+		if @instruction == "M"
 			move 
-		elsif direction == "L"
+		elsif @instruction == "L"
 			turn_left
-		elsif direction == "R"
+		elsif @instruction == "R"
 			turn_right 
 		end
 	end
-
 
 	def move
 		if @direction == "N"
@@ -42,29 +41,32 @@ class Rove
 	end
 
 	def turn_left
-	if @
-
+		if @direction == "N"
+			puts "(#{@x},#{@y},West)"
+		elsif @direction == "S"
+			puts "(#{@x},#{@y},East)"
+		elsif @direction == "E"
+			puts "(#{@x},#{@y}, North)"
+		elsif @direction == "W"
+			puts "(#{@x},#{@y}, South)"
+		end
 	end
 
 	def turn_right
-
+		if @direction == "N"
+			puts "(#{@x},#{@y},East)"
+		elsif @direction == "S"
+			puts "(#{@x},#{@y},West)"
+		elsif @direction == "E"
+			puts "(#{@x},#{@y}, South)"
+		elsif @direction == "W"
+			puts "(#{@x},#{@y}, North)"
 	end
-
-
-	# def move
-	# 	if ahead 
-
-	# 	elsif turn left 
-	# 		y + 1
-	# 	elsif turn right
-	# 	 	x + 1
-	# 	end
- # 	end
 end
 
-rove = Rove.new(0,0,"E")
+rove = Rove.new(5,0,"W")
 rove.position # x:0 y:0　ｄ:N
-rove.read_instruction("L")
+rove.read_instruction("R") 
 rove.position
 
-
+end
