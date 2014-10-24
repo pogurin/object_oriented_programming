@@ -7,7 +7,7 @@ class Rove
 	end
 
 	def position 
-		if 	 @direction == "N"
+		if 	 @direction == "N" 
 			puts "now it is (#{@x},#{@y},North)"
 		elsif @direction == "S"
 			puts "now it is(#{@x},#{@y},South)"
@@ -19,6 +19,7 @@ class Rove
 	end 
 
 	def read_instruction(instruction)
+		@instruction = instruction
 		if @instruction == "M"
 			move 
 		elsif @instruction == "L"
@@ -30,43 +31,43 @@ class Rove
 
 	def move
 		if @direction == "N"
-			puts "(#{@x},#{@y+1},@direction)"
+			puts "New place is (#{@x},#{@y+1},#{@direction})"
 		elsif @direction == "S"
-			puts "(#{@x},#{@y-1},@direction)"
+			puts "New place is (#{@x},#{@y-1},#{@direction})"
 		elsif @direction == "E"
-			puts "(#{@x+1},#{@y},@direction)"
+			puts "New place is (#{@x+1},#{@y},#{@direction})"
 		elsif @direction == "W"
-			puts "(#{@x-1},#{@y},@direction)"
+			puts "New place is (#{@x-1},#{@y},#{@direction})"
 		end	
 	end
 
 	def turn_left
 		if @direction == "N"
-			puts "(#{@x},#{@y},West)"
+			puts "New place is (#{@x},#{@y},West)"
 		elsif @direction == "S"
-			puts "(#{@x},#{@y},East)"
+			puts "New place is (#{@x},#{@y},East)"
 		elsif @direction == "E"
-			puts "(#{@x},#{@y}, North)"
+			puts "New place is (#{@x},#{@y},North)"
 		elsif @direction == "W"
-			puts "(#{@x},#{@y}, South)"
+			puts "New place is (#{@x},#{@y},South)"
 		end
 	end
 
 	def turn_right
 		if @direction == "N"
-			puts "(#{@x},#{@y},East)"
+			puts "New place is (#{@x},#{@y},East)"
 		elsif @direction == "S"
-			puts "(#{@x},#{@y},West)"
+			puts "New place is (#{@x},#{@y},West)"
 		elsif @direction == "E"
-			puts "(#{@x},#{@y}, South)"
+			puts "New place is (#{@x},#{@y},South)"
 		elsif @direction == "W"
-			puts "(#{@x},#{@y}, North)"
+			puts "New place is (#{@x},#{@y},North)"
 	end
 end
 
-rove = Rove.new(5,0,"W")
+rove = Rove.new(5,10,"E")
 rove.position # x:0 y:0　ｄ:N
-rove.read_instruction("R") 
-rove.position
+rove.read_instruction("M")
+
 
 end
