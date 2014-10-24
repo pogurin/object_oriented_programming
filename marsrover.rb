@@ -3,7 +3,7 @@ class Rove
 	def initialize(x,y,direction)
 		@x = x
 		@y = y
-		@direction = direction
+		@direction = direction 
 	end
 
 	def position 
@@ -140,7 +140,7 @@ class Rove
 		end
 	end
 end
-	rove2 = Rove.new(3,0,"W")
+	rove2 = Rove.new(3,0,"W") 
 	rove2.position # x:0 y:0　ｄ:N
 	rove2.read_instruction("L")
 
