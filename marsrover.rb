@@ -144,4 +144,9 @@ end
 	rove2.position # x:0 y:0　ｄ:N
 	rove2.read_instruction("L")
 
+	puts "Please put your order."
+	user_input = gets.chomp
+  	rove2.read_instruction(user_input)
+
+read_instruction
 
